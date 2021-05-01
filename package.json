@@ -1,0 +1,26 @@
+{
+  "name": "process-control-charts",
+  "version": "1.0.0",
+  "description": "methods to solve p-chart, np-chart, c-chart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashidmakki/process-control-charts.git"
+  },
+  "keywords": [
+    "process-control-charts",
+    "p-chart",
+    "np-chart",
+    "c-chart",
+    "statistical-quality-control"
+  ],
+  "author": "rashidmakki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rashidmakki/process-control-charts/issues"
+  },
+  "homepage": "https://github.com/rashidmakki/process-control-charts#readme"
+}
