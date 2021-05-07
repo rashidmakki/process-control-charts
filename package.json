@@ -4,7 +4,8 @@
   "description": "methods to solve p-chart, np-chart, c-chart",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
   },
   "repository": {
     "type": "git",
@@ -12,10 +13,13 @@
   },
   "keywords": [
     "process-control-charts",
+    "statistical-quality-control",
     "p-chart",
     "np-chart",
     "c-chart",
-    "statistical-quality-control"
+    "math",
+    "charts",
+    "graph"
   ],
   "author": "rashidmakki",
   "license": "MIT",
