@@ -55,10 +55,10 @@ node index.js
 ## Methods Available
 | Method Name   | Parameter              | Output Type   |
 | ------------- | ---------------------  | ------------- |
-| pChart        | ( [data], SampleSize ) | {Object}      |
-| npChart       | ( [data], SampleSize ) | {Object}      |
-| cChart        | ( [data])              | {Object}      |
-| uChart        | ( [data], SampleSize ) | {Object}      |
+| pChart        | ( [data], SampleSize ) | { Object }    |
+| npChart       | ( [data], SampleSize ) | { Object }    |
+| cChart        | ( [data])              | { Object }    |
+| uChart        | ( [data], SampleSize ) | { Object }    |
 
 ## Help
 Raise the issue or problem on this repository.
