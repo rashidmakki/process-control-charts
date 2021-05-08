@@ -11,14 +11,14 @@ npm install process-control-charts
 
 ## Example
 
-```
+```js
 // index.js
 let { pChart } = require('process-control-charts');
 
 let data = [12,15,8, 10, 4, 7, 16, 9, 14, 10, 5, 6, 17, 12, 22 ,8,10, 5 , 13, 11, 20, 18, 24, 15, 9, 12, 7, 13, 9, 6];
 let details = pChart(data, 50);
 console.log(details);
-```js
+```
 
 ### Run
 ```
