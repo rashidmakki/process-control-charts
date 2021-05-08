@@ -115,11 +115,134 @@ let npChart = (data, sampleSize)=>{
 
 }
 
-let data = [12,15,8, 10, 4, 7, 16, 9, 14, 10, 5, 6, 17, 12, 22 ,8,10, 5 , 13, 11, 20, 18, 24, 15, 9, 12, 7, 13, 9, 6];
-let details = npChart(data, 50);
-console.log(details);
+//let data = [12,15,8, 10, 4, 7, 16, 9, 14, 10, 5, 6, 17, 12, 22 ,8,10, 5 , 13, 11, 20, 18, 24, 15, 9, 12, 7, 13, 9, 6];
+//let details = npChart(data, 50);
+//console.log(details);
+
+
+// c-chart
+// UCL=c + 3*√c
+// CL=c
+// LCL= c - 3*√c
+
+
+let c_ucl = (c)=>{
+    let UCL = c + (3 * Math.sqrt(c)); 
+    return UCL;
+}
+
+let c_lcl = (c)=>{
+    let LCL = c - (3 * Math.sqrt(c)); 
+    if(LCL < 0){
+        LCL=0;
+    }
+    return LCL;
+}
+let cChart = (data)=>{
+    let count=0;
+    let totalItem = data.reduce((accumulator, item)=>{
+        return accumulator+item;
+    }, 0);
+    let details = {
+        lcl:0,
+        cl:0 ,
+        ucl:0,
+        samplesOutOfControl:0,
+        sampleData: []
+    };
+ 
+    let m = data.length; 
+    let c = totalItem/(m);
+    let cl = c;
+    let upperControlLimit = c_ucl(c);
+    let lowerControlLimit = c_lcl(c);
+    
+    details.cl = cl;
+    details.ucl = upperControlLimit;
+    details.lcl = lowerControlLimit;
+
+    data.map((item, sampleNumber)=>{
+        let pi = item;
+        if(pi>upperControlLimit ||pi<lowerControlLimit){
+            count=count+1;
+            details.samplesOutOfControl=count;
+        }
+        details.sampleData.push({x: sampleNumber+1, y: pi});
+    });
+
+    return details;
+
+}
+
+//let data = [21,24,16,12,15,5,28,20,31,25,20,24,16,19,10,17,13,22,18,39,30,24,16,19,17,15];
+//let details = cChart(data);
+//console.log(details);
+
+
+// u-chart
+// UCL=u + 3*√u/n
+// CL=u
+// LCL= u - 3*√u/n
+
+
+let u_ucl = (u,n)=>{
+    let UCL = u + (3 * Math.sqrt((u/n))); 
+    return UCL;
+}
+
+let u_lcl = (u,n)=>{
+    let LCL = u - (3 * Math.sqrt((u/n))); 
+    if(LCL < 0){
+        LCL=0;
+    }
+    return LCL;
+}
+let uChart = (data,sampleSize)=>{
+    let count=0;
+    let totalItem = data.reduce((accumulator, item)=>{
+        return accumulator+item;
+    }, 0);
+    let details = {
+        lcl:0,
+        cl:0 ,
+        ucl:0,
+        samplesOutOfControl:0,
+        sampleData: []
+    };
+ 
+    let m = data.length;
+    let n= sampleSize;
+    let ui = totalItem/n;
+    let u=ui/m;
+    let cl = u;
+    let upperControlLimit = u_ucl(u,n);
+    let lowerControlLimit = u_lcl(u,n);
+    
+    details.cl = cl;
+    details.ucl = upperControlLimit;
+    details.lcl = lowerControlLimit;
+
+    data.map((item, sampleNumber)=>{
+        let ui = item/n;
+        if(ui>upperControlLimit ||ui<lowerControlLimit){
+            count=count+1;
+            details.samplesOutOfControl=count;
+        }
+        details.sampleData.push({x: sampleNumber+1, y: ui});
+    });
+
+    return details;
+
+}
+
+//let data = [2,3,8,1,1,4,1,4,5,1,8,2,4,3,4,1,8,3,7,4];
+//let details = uChart(data,50);
+//console.log(details);
+
 
 module.exports={
     pChart:pChart,
-    npChart:npChart 
+    npChart:npChart,
+    cChart:cChart,
+    uChart:uChart
 }

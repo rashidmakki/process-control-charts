@@ -1,7 +1,7 @@
 {
   "name": "process-control-charts",
   "version": "1.0.0",
-  "description": "methods to solve p-chart, np-chart, c-chart",
+  "description": "methods to solve p-chart, np-chart, c-chart, u-chart",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,7 +17,8 @@
     "p-chart",
     "np-chart",
     "c-chart",
-    "math",
+    "u-chart"
+    "maths",
     "charts",
     "graph"
   ],
