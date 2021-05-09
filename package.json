@@ -1,6 +1,6 @@
 {
   "name": "process-control-charts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "methods to solve p-chart, np-chart, c-chart, u-chart",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "p-chart",
     "np-chart",
     "c-chart",
-    "u-chart"
+    "u-chart",
     "maths",
     "charts",
     "graph"

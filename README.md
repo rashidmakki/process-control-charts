@@ -18,15 +18,22 @@ let { pChart } = require('process-control-charts');
 let data = [12,15,8, 10, 4, 7, 16, 9, 14, 10, 5, 6, 17, 12, 22 ,8,10, 5 , 13, 11, 20, 18, 24, 15, 9, 12, 7, 13, 9, 6];
 let details = pChart(data, 50);
 console.log(details);
+
+/* 
+x --> Sample number
+y --> Sample fraction nonconforming
+*/
+
 ```
 
 ### Run
 ```
-node index.js
+npm start
 ```
 
 ### Output
 ```
+
 {
   lcl: 0.05242754807192823,
   cl: 0.23133333333333334,
@@ -50,6 +57,7 @@ node index.js
     { x: 29, y: 0.18 }, { x: 30, y: 0.12 }
   ]
 }
+
 ```
 
 ## Methods Available

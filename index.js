@@ -16,6 +16,9 @@ let p_lcl = (p,n)=>{
     return LCL;
 }
 let pChart = (data, sampleSize)=>{
+    if(!data||!sampleSize||!Array.isArray(data)||isNaN(sampleSize)||data.length<=0){
+        return "Please enter parameters correctly" ;
+    }
     let count=0;
     let totalItem = data.reduce((accumulator, item)=>{
         return accumulator+item;
@@ -55,10 +58,10 @@ let pChart = (data, sampleSize)=>{
 //let data = [12,15,8, 10, 4, 7, 16, 9, 14, 10, 5, 6, 17, 12, 22 ,8,10, 5 , 13, 11, 20, 18, 24, 15, 9, 12, 7, 13, 9, 6];
 //let details = pChart(data, 50);
 
-//data1=[9,6,12,5,6,4,6,3,7,6,2,4,3,6,5,4,8,5,6,7,5,6,3,5];
+//let data1=[9,6,12,5,6,4,6,3,7,6,2,4,3,6,5,4,8,5,6,7,5,6,3,5];
 //let details1=pChart(data1,50);
  
-//console.log(details, details1);
+//console.log(details);
 
 
 // np-chart
@@ -80,6 +83,9 @@ let np_lcl = (p,n)=>{
     return LCL;
 }
 let npChart = (data, sampleSize)=>{
+    if(!data||!sampleSize||!Array.isArray(data)||isNaN(sampleSize)||data.length<=0){
+        return "Please enter parameters correctly" ;
+    }
     let count=0;
     let totalItem = data.reduce((accumulator, item)=>{
         return accumulator+item;
@@ -139,6 +145,9 @@ let c_lcl = (c)=>{
     return LCL;
 }
 let cChart = (data)=>{
+    if(!data||!Array.isArray(data)||data.length<=0){
+        return "Please enter parameters correctly" ;
+    }
     let count=0;
     let totalItem = data.reduce((accumulator, item)=>{
         return accumulator+item;
@@ -162,12 +171,12 @@ let cChart = (data)=>{
     details.lcl = lowerControlLimit;
 
     data.map((item, sampleNumber)=>{
-        let pi = item;
-        if(pi>upperControlLimit ||pi<lowerControlLimit){
+        let ci = item;
+        if(ci>upperControlLimit ||ci<lowerControlLimit){
             count=count+1;
             details.samplesOutOfControl=count;
         }
-        details.sampleData.push({x: sampleNumber+1, y: pi});
+        details.sampleData.push({x: sampleNumber+1, y: ci});
     });
 
     return details;
@@ -198,6 +207,9 @@ let u_lcl = (u,n)=>{
     return LCL;
 }
 let uChart = (data,sampleSize)=>{
+    if(!data||!sampleSize||!Array.isArray(data)||isNaN(sampleSize)||data.length<=0){
+        return "Please enter parameters correctly" ;
+    }
     let count=0;
     let totalItem = data.reduce((accumulator, item)=>{
         return accumulator+item;
