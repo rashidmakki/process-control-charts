@@ -28,7 +28,10 @@ let pChart = (data, sampleSize)=>{
         cl:0 ,
         ucl:0,
         samplesOutOfControl:0,
-        sampleData: []
+        sampleData: [],
+        lclPlot:[],
+        clPlot:[],
+        uclPlot:[]
     };
 
  
@@ -49,6 +52,9 @@ let pChart = (data, sampleSize)=>{
             details.samplesOutOfControl=count;
         }
         details.sampleData.push({x: sampleNumber+1, y: pi});
+        details.lclPlot.push({x:sampleNumber+1,y:lowerControlLimit});
+        details.clPlot.push({x:sampleNumber+1,y:cl});
+        details.uclPlot.push({x:sampleNumber+1,y:upperControlLimit});
     });
 
     return details;
@@ -95,7 +101,10 @@ let npChart = (data, sampleSize)=>{
         cl:0 ,
         ucl:0,
         samplesOutOfControl:0,
-        sampleData: []
+        sampleData: [],
+        lclPlot:[],
+        clPlot:[],
+        uclPlot:[]
     };
  
     let m = data.length, n = sampleSize; 
@@ -115,6 +124,9 @@ let npChart = (data, sampleSize)=>{
             details.samplesOutOfControl=count;
         }
         details.sampleData.push({x: sampleNumber+1, y: pi});
+        details.lclPlot.push({x:sampleNumber+1,y:lowerControlLimit});
+        details.clPlot.push({x:sampleNumber+1,y:cl});
+        details.uclPlot.push({x:sampleNumber+1,y:upperControlLimit});
     });
 
     return details;
@@ -157,7 +169,10 @@ let cChart = (data)=>{
         cl:0 ,
         ucl:0,
         samplesOutOfControl:0,
-        sampleData: []
+        sampleData: [],
+        lclPlot:[],
+        clPlot:[],
+        uclPlot:[]
     };
  
     let m = data.length; 
@@ -177,6 +192,9 @@ let cChart = (data)=>{
             details.samplesOutOfControl=count;
         }
         details.sampleData.push({x: sampleNumber+1, y: ci});
+        details.lclPlot.push({x:sampleNumber+1,y:lowerControlLimit});
+        details.clPlot.push({x:sampleNumber+1,y:cl});
+        details.uclPlot.push({x:sampleNumber+1,y:upperControlLimit});
     });
 
     return details;
@@ -219,7 +237,10 @@ let uChart = (data,sampleSize)=>{
         cl:0 ,
         ucl:0,
         samplesOutOfControl:0,
-        sampleData: []
+        sampleData: [],
+        lclPlot:[],
+        clPlot:[],
+        uclPlot:[]
     };
  
     let m = data.length;
@@ -241,15 +262,18 @@ let uChart = (data,sampleSize)=>{
             details.samplesOutOfControl=count;
         }
         details.sampleData.push({x: sampleNumber+1, y: ui});
+        details.lclPlot.push({x:sampleNumber+1,y:lowerControlLimit});
+        details.clPlot.push({x:sampleNumber+1,y:cl});
+        details.uclPlot.push({x:sampleNumber+1,y:upperControlLimit});
     });
 
     return details;
 
 }
 
-//let data = [2,3,8,1,1,4,1,4,5,1,8,2,4,3,4,1,8,3,7,4];
-//let details = uChart(data,50);
-//console.log(details);
+// let data = [2,3,8,1,1,4,1,4,5,1,8,2,4,3,4,1,8,3,7,4];
+// let details = cChart(data);
+// console.log(details);
 
 
 module.exports={
@@ -258,3 +282,4 @@ module.exports={
     cChart:cChart,
     uChart:uChart
 }
+

@@ -1,6 +1,6 @@
 {
   "name": "process-control-charts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "methods to solve p-chart, np-chart, c-chart, u-chart",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "u-chart",
     "maths",
     "charts",
-    "graph"
+    "graph",
+    "spc"
   ],
   "author": "rashidmakki",
   "license": "MIT",
