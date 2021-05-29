@@ -122,5 +122,5 @@ Raise the issue or problem on this repository.
 * [Saurabh Tiwari](https://github.com/saurabhtiwarii/)
 * [Rashid Makki](https://github.com/rashidmakki/)
 
-##Example 
+## Example 
 * [Process Control Charts Example](https://github.com/rashidmakki/process-control-charts-example)
