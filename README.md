@@ -10,7 +10,11 @@ process-control-chart is npm package which provides fast methods to solve p-char
 ```
 npm install process-control-charts
 ```
+or
 
+```
+yarn add process-control-charts
+```
 ## Example
 
 ```js
