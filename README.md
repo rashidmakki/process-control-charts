@@ -1,5 +1,5 @@
 # Process Control Charts
-process-control-chart is npm package which provides fast methods to solve p-chart, np-chart, c-chart, u-chart.
+process-control-chart is npm package which provides statistical methods to solve p-chart, np-chart, c-chart, u-chart in order to study how the process changes over time.
 
 ## Getting Started
 * [Live Demo](https://rashidmakki.github.io/process-control-charts-example/)
